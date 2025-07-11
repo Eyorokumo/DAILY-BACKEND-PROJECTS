@@ -1,0 +1,36 @@
+# # Todo List App
+
+# A simple browser-based todo list application built with HTML, CSS, and JavaScript.
+
+# ## Features
+
+# - Add new tasks with title, due date, and description
+# - Edit existing tasks
+# - Delete tasks
+# - Tasks are saved in your browser (localStorage) and persist after refresh
+
+# ## Usage
+
+# 1. Click **Add new task** to open the modal form.
+# 2. Fill in the task details and click **Add**.
+# 3. Edit or delete tasks using the icons next to each task.
+# 4. All changes are saved automatically.
+
+# ## Project Structure
+
+# ```
+# ├── index.html
+# ├── style.css
+# ├── index.js
+# ```
+
+# ## How It Works
+
+# - All tasks are stored in `localStorage` under the key `tasksData`.
+# - On page load, tasks are loaded and displayed.
+# - Editing a task removes it and lets you update its details.
+# - Deleting a task removes it from the list and storage.
+
+
+
+
