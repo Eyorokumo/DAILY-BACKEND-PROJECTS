@@ -65,7 +65,7 @@ function renderTasks() {
 
         // Music reminder and notification
         if (isDueSoon) {
-            // Browser notification
+            showReminderPopup(data.text, data.description);
             if (window.Notification && Notification.permission === "granted") {
                 new Notification("Music Reminder", {
                     body: `Task "${data.text}" is due today!`,
@@ -79,9 +79,6 @@ function renderTasks() {
                     }
                 });
             }
-            // Play sound
-            let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3");
-            audio.play();
         }
 
         // Delete functionality
@@ -132,13 +129,12 @@ window.addEventListener("DOMContentLoaded", function() {
     renderTasks();
 });
 
-
+// Full screen music reminder popup
 function showReminderPopup(title, desc) {
     let popup = document.getElementById("reminderPopup");
     document.getElementById("reminderTitle").textContent = `Music Reminder: ${title}`;
     document.getElementById("reminderDesc").textContent = desc;
     popup.style.display = "flex";
-    // Play sound
     let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3");
     audio.play();
 }
@@ -146,22 +142,3 @@ function showReminderPopup(title, desc) {
 document.getElementById("closeReminder").addEventListener("click", function() {
     document.getElementById("reminderPopup").style.display = "none";
 });
-
-if (isDueSoon) {
-    showReminderPopup(data.text, data.description);
-    // Optionally, still show browser notification
-    if (window.Notification && Notification.permission === "granted") {
-        new Notification("Music Reminder", {
-            body: `Task "${data.text}" is due today!`,
-        });
-    } else if (window.Notification && Notification.permission !== "denied") {
-        Notification.requestPermission().then(permission => {
-            if (permission === "granted") {
-                new Notification("Music Reminder", {
-                    body: `Task "${data.text}" is due today!`,
-                });
-            }
-        });
-    }
-}
-

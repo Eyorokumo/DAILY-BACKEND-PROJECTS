@@ -85,9 +85,11 @@ body {
     padding: 0;
   }
 }
+
+/* Dark mode styles */
 body.dark-mode {
   background-color: #181818;
-  color: #3e3b3b;
+  color: #fff;
 }
 body.dark-mode .app {
   background-color: #232323;
@@ -104,35 +106,10 @@ body.dark-mode .fa-plus {
   background-color: #444;
 }
 
-/* Add to style.css */
+/* Modal styles (always grey, white text) */
 .modal-dialog {
   margin-top: 60px;
 }
-
-/* Modal background and text color for dark mode */
-body.dark-mode .modal-content {
-  background-color: #232323 !important;
-  color: #fff !important;
-}
-body.dark-mode .modal-header,
-body.dark-mode .modal-footer {
-  background-color: #232323 !important;
-  color: #fff !important;
-}
-body.dark-mode .modal-body {
-  background-color: #232323 !important;
-  color: #fff !important;
-}
-body.dark-mode .form-control {
-  background-color: #444 !important;
-  color: #fff !important;
-  border-color: #666 !important;
-}
-body.dark-mode .btn-close {
-  filter: invert(1);
-}
-
-/* Always grey modal with white text */
 .modal-content,
 .modal-header,
 .modal-footer,
