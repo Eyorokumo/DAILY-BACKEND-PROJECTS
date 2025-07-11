@@ -31,7 +31,6 @@
 
 
 <!-- Modal -->
-<form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -55,8 +54,37 @@
       </div>
     </div>
   </div>
-</form>
+</form> -->
 
+<form class="modal fade" id="form" ...>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add New Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-end text-secondary mb-2">Today: <span id="todayDate"></span></p>
+        <p>Task Title</p>
+        <input class="form-control" type="text" id="textInput">
+        <div id="msg"></div>
+        <br>
+        <p>Due Date</p>
+        <input class="form-control" type="date" id="dateInput">
+        <br>
+        <p>Description</p>
+        <textarea class="form-control" id="textarea" cols="30" rows="5"></textarea>
+        <br>
+        <p>Email for reminder</p>
+        <input class="form-control" type="email" id="emailInput" placeholder="Enter your email">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add</button>
+      </div>
+    </div>
+  </div>
+</form>
 
  <div id="tasks">
         <div>
@@ -79,6 +107,12 @@
         </div>
     </div>
     <!-- Add this above your #tasks div -->
+</div>
+<!-- Full screen reminder pop-up (place before </body>) -->
+<div id="reminderPopup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); color:#fff; z-index:9999; justify-content:center; align-items:center; flex-direction:column; text-align:center;">
+  <h2 id="reminderTitle"></h2>
+  <p id="reminderDesc"></p>
+  <button id="closeReminder" class="btn btn-light mt-3">Close</button>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="index.js"></script>
